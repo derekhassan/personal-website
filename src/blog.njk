@@ -1,0 +1,14 @@
+---
+title: Blog
+layout: 'base.njk'
+---
+
+<h1 class="page-heading">{{ title }}</h1>
+<h2 class="article-year">2022</h2>
+<ul>
+    {%- for post in collections.post -%}
+    <li>
+        <a class="article-link" href="{{ post.url }}">{{ post.data.title }}</a>
+    </li>
+    {%- endfor -%}
+</ul>

@@ -1,0 +1,31 @@
+---
+title: Derek Hassan
+layout: 'base.njk'
+---
+
+<header class="hero">
+    <span class="hero__small-text">Hi I'm Derek 👋</span>
+    <h1 class="hero__main-title">
+        Full stack JS developer specializing in delivering cloud solutions
+    </h1>
+</header>
+<section class="section">
+    <h2 class="section__title">About</h2>
+    <p class="paragraph">
+        I'm a developer who loves to learn new things. Recently I've been diving
+        into the cloud space as I look to constantly be expanding my knowledge.
+    </p>
+</section>
+
+<section class="section">
+    <h2 class="section__title">Recent Posts</h2>
+    <ul>
+        {%- for post in collections.post -%}
+        <li>
+            <a class="article-link" href="{{ post.url }}">{{
+                post.data.title
+            }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</section>
