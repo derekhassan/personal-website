@@ -40,6 +40,10 @@ body {
     color: var(--light);
 }
 
+a {
+    color: var(--accent);
+}
+
 .container {
     max-width: 1000px;
     margin-inline: auto;
@@ -50,6 +54,10 @@ body {
     margin-top: 56px;
 }
 
+.content p,
+.content ul {
+    line-height: 1.62;
+}
 /* Navigation */
 .nav {
     display: flex;
@@ -164,7 +172,6 @@ body {
 
 /* Blog */
 .article-link {
-    color: var(--accent);
     font-size: var(--text-m);
 }
 
@@ -214,7 +221,6 @@ body {
 
 .footer__nav__link {
     font-size: 0.875rem;
-    color: var(--accent);
 }
 
 .footer__nav__link--icon {
