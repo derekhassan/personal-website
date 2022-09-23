@@ -17,6 +17,8 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addWatchTarget('./src/js/');
 
+    eleventyConfig.addGlobalData('env', require('dotenv').config().parsed);
+
     return {
         dir: {
             input: 'src',
