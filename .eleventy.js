@@ -19,6 +19,8 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addGlobalData('env', require('dotenv').config().parsed);
 
+    eleventyConfig.addFilter('limit', (arr, limit) => arr.slice(0, limit));
+
     return {
         dir: {
             input: 'src',
