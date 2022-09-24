@@ -58,6 +58,23 @@ a {
 .content ul {
     line-height: 1.62;
 }
+
+.content details summary { 
+    cursor: pointer;
+    background-color: var(--gray);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.content details {
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.content details > :not(summary) {
+    margin-left: 1.5rem;
+}
+
 /* Navigation */
 .nav {
     display: flex;
