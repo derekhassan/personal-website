@@ -44,7 +44,26 @@
         <div class="container">
             {% include 'navbar.njk' %}
             <main class="content">
+                <a class="back-link" href="/blog">
+                    <i class="ri-arrow-left-line"></i> Back to Blog
+                </a>
+                <span class="content__date">
+                    Published on {{ date.toDateString() }}
+                </span>
+                <h1 class="content__header">{{ title }}</h1>
                 {{ content | safe }}
+                {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+                
+                {% set nextPost = collections.post | getNextCollectionItem(page) %}
+
+                <div class="post-pagination">
+                    <div class="prev">
+                        {% if previousPost %}<a href="{{ previousPost.url }}"><i class="ri-arrow-left-line"></i>{{ previousPost.data.title }}</a>{% endif %}
+                    </div>
+                    <div class="next">
+                        {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.title }}<i class="ri-arrow-right-line"></i></a>{% endif %}
+                    </div>
+                </div>
             </main>
             {% include 'footer.njk' %}
         </div>
