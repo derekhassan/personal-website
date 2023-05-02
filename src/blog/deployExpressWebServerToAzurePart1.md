@@ -13,7 +13,7 @@ As part of this blog series, we will be walking through how to set up an Express
 ## What We Will Be Doing
 
 1. Creating a basic "Hello World" Express Server (this post)
-2. Write our infrastructure as code utilizing Terraform
+2. [Write our infrastructure as code utilizing Terraform](/blog/deploy-an-express-web-server-to-azure-vm-part-2/)
 3. Creating a GitHub Action to automate deploying code changes to our virtual machine
 
 ## Tools Required
@@ -190,4 +190,4 @@ This will make the font a lot less ugly!
 
 ## Wrap Up
 
-In this post, we have went ahead and created a simple Express web server that we can use to deploy to our virtual machine in the future. Feel free to personalize this application to your liking! In the next post, we will be writing out our infrastructure as code using Terraform. I hope to see you in the next post!
+In this post, we have went ahead and created a simple Express web server that we can use to deploy to our virtual machine in the future. Feel free to personalize this application to your liking! In [the next post](/blog/deploy-an-express-web-server-to-azure-vm-part-2/), we will be writing out our infrastructure as code using Terraform. I hope to see you in the next post!
