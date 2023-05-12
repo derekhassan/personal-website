@@ -14,10 +14,8 @@ module.exports = (eleventyConfig) => {
         const token = tokens[idx];
         const imgSrc = token.attrGet('src');
         const imgAlt = token.content;
-        const imgTitle = token.attrGet('title');
 
         const htmlOpts = {
-            title: imgTitle,
             alt: imgAlt,
             loading: 'lazy',
             decoding: 'async',
@@ -27,7 +25,7 @@ module.exports = (eleventyConfig) => {
             imgSrc = 'src' + imgSrc;
         }
 
-        const widths = [250, 316, 426, 460, 580, 600];
+        const widths = [250, 316, 426, 460, 580, 600, 1000];
         const imgOpts = {
             widths: widths
                 .concat(widths.map((w) => w * 2)) // generate 2x sizes
@@ -41,7 +39,7 @@ module.exports = (eleventyConfig) => {
         const metadata = Image.statsSync(imgSrc, imgOpts);
 
         const generated = Image.generateHTML(metadata, {
-            sizes: '(max-width: 600x) 100vw, 600px',
+            sizes: '(max-width: 400px) 250px',
             ...htmlOpts,
         });
 

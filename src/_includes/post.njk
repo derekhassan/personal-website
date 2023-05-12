@@ -8,6 +8,11 @@
         <!-- Open Graph -->
 
         <title>{{ title }}</title>
+        <meta
+            name="description"
+            content="{{ description or metadata.description }}"
+        />
+        <meta name="author" content="{{ author or metadata.author }}" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -52,16 +57,22 @@
                 </span>
                 <h1 class="content__header">{{ title }}</h1>
                 {{ content | safe }}
-                {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
-                
-                {% set nextPost = collections.post | getNextCollectionItem(page) %}
+                {% set previousPost = collections.post |
+                getPreviousCollectionItem(page) %} {% set nextPost =
+                collections.post | getNextCollectionItem(page) %}
 
                 <div class="post-pagination">
                     <div class="prev">
-                        {% if previousPost %}<a href="{{ previousPost.url }}"><i class="ri-arrow-left-line"></i>{{ previousPost.data.title }}</a>{% endif %}
+                        {% if previousPost %}<a href="{{ previousPost.url }}"
+                            ><i class="ri-arrow-left-line"></i
+                            >{{ previousPost.data.title }}</a
+                        >{% endif %}
                     </div>
                     <div class="next">
-                        {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.title }}<i class="ri-arrow-right-line"></i></a>{% endif %}
+                        {% if nextPost %}<a href="{{ nextPost.url }}"
+                            >{{ nextPost.data.title
+                            }}<i class="ri-arrow-right-line"></i></a
+                        >{% endif %}
                     </div>
                 </div>
             </main>

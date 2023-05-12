@@ -1,6 +1,5 @@
 :root {
-    --dark: #2e313d;
-    --dark-1: #292c35;
+    --dark: #292c35;
     --light: #ffffff;
     --gray: #4f4f5d;
     --text-xl: 3.75rem;
@@ -91,6 +90,11 @@ a {
 
 .content details > :not(summary) {
     margin-left: 1.5rem;
+}
+
+.content img {
+    height: auto;
+    max-width: 100%;
 }
 
 .back-link {

@@ -7,7 +7,13 @@
 
         <!-- Open Graph -->
 
-        <title>{{ title }}</title>
+        <title>{{ title or metadata.title }}</title>
+        {% if description or metadata.description %}
+        <meta
+            name="description"
+            content="{{ description or metadata.description }}"
+        />
+        {% endif %}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

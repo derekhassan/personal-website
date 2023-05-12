@@ -5,7 +5,7 @@ layout: 'base.njk'
 
 <h1 class="page-heading">{{ title }}</h1>
 <ul class="blog-entries">
-    {%- for post in collections.post -%}
+    {%- for post in collections.post | reverse -%}
     <li>
         <article class="blog-entry">
             <span class="blog-entry__date">

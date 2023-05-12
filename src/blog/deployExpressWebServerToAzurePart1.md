@@ -1,6 +1,8 @@
 ---
 tags: post
 title: Deploy an Express Web Server to Azure VM Part 1
+description: Learn how to quickly set up a basic Express web server
+author: Derek Hassan
 layout: 'post.njk'
 permalink: 'blog/{{ title | slugify }}/'
 date: 2023-04-23
