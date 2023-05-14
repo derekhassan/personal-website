@@ -2,13 +2,20 @@
     "name": "personal-blog",
     "version": "1.0.0",
     "description": "",
-    "main": "main.js",
     "scripts": {
         "start": "eleventy --serve --formats=md,jpg,njk",
         "build": "eleventy"
     },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/derekhassan/personal-website"
+    },
     "keywords": [],
-    "author": "",
+    "author": {
+        "name": "Derek Hassan",
+        "email": "derek@derekhassan.dev",
+        "url": "https://derekhassan.dev/"
+    },
     "license": "ISC",
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",

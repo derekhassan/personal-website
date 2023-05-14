@@ -6,7 +6,7 @@
     --text-l: 2.625rem;
     --text-m: 1.125rem;
     --text-s: 1rem;
-    --text-xs: 0.75rem;
+    --text-xs: 0.875rem;
     --accent: #81fbe8;
 }
 
@@ -67,7 +67,7 @@ a {
 .content p,
 .content ul,
 .content ol {
-    line-height: 1.62;
+    line-height: 2;
 }
 
 .content blockquote {
@@ -235,8 +235,6 @@ a {
     list-style-type: none;
     padding: 0;
 }
-.blog-entry {
-}
 
 .blog-entry__date {
     font-size: var(--text-xs);
@@ -318,6 +316,11 @@ a {
     .footer__nav__link--icon {
         font-size: 1.5rem;
     }
+}
+
+/* Recent Posts */
+.recent-posts li {
+    margin-bottom: 1.25rem;
 }
 
 /* Utils */

@@ -3,7 +3,6 @@ tags: post
 title: Deploy an Express Web Server to Azure VM Part 3
 description: Learn how to automate deployments of an Express web server to Azure with GitHub Actions
 author: Derek Hassan
-layout: 'post.njk'
 permalink: 'blog/{{ title | slugify }}/'
 date: 2023-05-12
 ---

@@ -3,7 +3,6 @@ tags: post
 title: How to Pass an Array as a Query String to Express
 description: Learn how to pass an array as part of query params
 author: Derek Hassan
-layout: 'post.njk'
 permalink: 'blog/{{ title | slugify }}/'
 date: 2022-09-10
 ---

@@ -3,7 +3,6 @@ tags: post
 title: Deploy an Express Web Server to Azure VM Part 2
 description: Learn how to provision infrastructure for an Express web server in Azure using the infrastructure as code tool Terraform
 author: Derek Hassan
-layout: 'post.njk'
 permalink: 'blog/{{ title | slugify }}/'
 date: 2023-05-02
 ---

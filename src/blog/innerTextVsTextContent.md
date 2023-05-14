@@ -3,7 +3,6 @@ tags: post
 title: innerText vs textContent, What's the Difference?
 description: Dive into the difference between the two similar methods innerText and textContent
 author: Derek Hassan
-layout: 'post.njk'
 permalink: 'blog/{{ title | slugify }}/'
 date: 2022-09-23
 ---

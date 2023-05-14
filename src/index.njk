@@ -22,7 +22,7 @@ layout: 'base.njk'
 
 <section class="section">
     <h2 class="section__title">Recent Posts</h2>
-    <ul>
+    <ul class="recent-posts">
         {% set mostRecentPostsLimit = collections.post | limit(3) %} {%- for
         post in mostRecentPostsLimit -%}
         <li>
