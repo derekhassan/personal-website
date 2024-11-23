@@ -1,5 +1,6 @@
 ---
-tags: post
+tags:
+    - javascript
 title: How to Add Metadata to Winston Logs
 description: Learn how to add metadata properties to your existing Winston logging solution.
 author: Derek Hassan
@@ -31,7 +32,7 @@ logger.info('Request received');
 Here is the output from the log:
 
 ```json
-{"level":"info","message":"Request received","service":"orderAPI"}
+{ "level": "info", "message": "Request received", "service": "orderAPI" }
 ```
 
 ## Method 2: Pass an Object as the Second Argument to the Log Method
@@ -47,7 +48,12 @@ logger.info('User added item(s) to cart', {
 Here is the output:
 
 ```json
-{"cart":[{"item":"JavaScript Coffee Mug","price":"$4.99"}],"level":"info","message":"User added item(s) to cart","service":"orderAPI"}
+{
+    "cart": [{ "item": "JavaScript Coffee Mug", "price": "$4.99" }],
+    "level": "info",
+    "message": "User added item(s) to cart",
+    "service": "orderAPI"
+}
 ```
 
 ## Method 3: Create a Child Logger
@@ -65,7 +71,12 @@ childLogger.info('Creating invoice');
 Here is the output:
 
 ```json
-{"level":"info","message":"Creating invoice","orderId":1,"service":"orderAPI"}
+{
+    "level": "info",
+    "message": "Creating invoice",
+    "orderId": 1,
+    "service": "orderAPI"
+}
 ```
 
 ## Conclusion

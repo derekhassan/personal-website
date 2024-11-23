@@ -1,6 +1,8 @@
 ---
-tags: post
-title: "Go vs JavaScript: Switch Statements"
+tags:
+    - go
+    - javascript
+title: 'Go vs JavaScript: Switch Statements'
 description: Learn the differences between switch statements in Go and JavaScript
 author: Derek Hassan
 permalink: 'blog/{{ title | slugify }}/'
@@ -16,25 +18,25 @@ Fall through happens when a `break` statement is omitted and execution continues
 ### JavaScript
 
 ```js
-const weekday = new Date().getDay()
+const weekday = new Date().getDay();
 
 switch (weekday) {
     case 0:
-        console.log('Sunday')
+        console.log('Sunday');
     case 1:
-        console.log('Monday')
+        console.log('Monday');
     case 2:
-        console.log('Tuesday')
+        console.log('Tuesday');
     case 3:
-        console.log('Wednesday')
+        console.log('Wednesday');
     case 4:
-        console.log('Thursday')
+        console.log('Thursday');
     case 5:
-        console.log('Friday')
+        console.log('Friday');
     case 6:
-        console.log('Saturday')
+        console.log('Saturday');
     default:
-        console.log('Unknown day')
+        console.log('Unknown day');
 }
 ```
 
@@ -55,32 +57,32 @@ That doesn’t seem like something we want! You’ll observe that once the match
 To fix our JavaScript program, we’d need to add `break` statements for each case:
 
 ```js
-const weekday = new Date().getDay()
+const weekday = new Date().getDay();
 
 switch (weekday) {
     case 0:
-        console.log('Sunday')
-        break
+        console.log('Sunday');
+        break;
     case 1:
-        console.log('Monday')
-        break
+        console.log('Monday');
+        break;
     case 2:
-        console.log('Tuesday')
-        break
+        console.log('Tuesday');
+        break;
     case 3:
-        console.log('Wednesday')
-        break
+        console.log('Wednesday');
+        break;
     case 4:
-        console.log('Thursday')
-        break
+        console.log('Thursday');
+        break;
     case 5:
-        console.log('Friday')
-        break
+        console.log('Friday');
+        break;
     case 6:
-        console.log('Saturday')
-        break
+        console.log('Saturday');
+        break;
     default:
-        console.log('Unknown day')
+        console.log('Unknown day');
 }
 ```
 
@@ -141,15 +143,15 @@ In Go, you can have multiple expressions in the same `case` statement so that if
 ### JavaScript
 
 ```js
-const weekday = new Date().getDay()
+const weekday = new Date().getDay();
 
 switch (weekday) {
     case 0:
     case 6:
-        console.log('The weekend!')
-        break
+        console.log('The weekend!');
+        break;
     default:
-        console.log('Weekday')
+        console.log('Weekday');
 }
 ```
 
@@ -196,14 +198,14 @@ In Go, you can omit the `switch` expression to create an alternate `else/if` log
 In the following example, the `case` is looking for the statement to be `true`, so it will short circuit on the first `case` that meets this condition, which is similar to a traditional `if/else` block.
 
 ```js
-const weekday = new Date().getDay()
+const weekday = new Date().getDay();
 
 switch (true) {
     case weekday === 1:
-        console.log('Monday')
-        break
+        console.log('Monday');
+        break;
     default:
-        console.log('Not Monday')
+        console.log('Not Monday');
 }
 ```
 

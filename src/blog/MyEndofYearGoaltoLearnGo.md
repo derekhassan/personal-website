@@ -1,5 +1,6 @@
 ---
-tags: post
+tags:
+    - go
 title: My End of Year Goal to Learn Go
 description: Why I chose Go as my next programming language to learn
 author: Derek Hassan
