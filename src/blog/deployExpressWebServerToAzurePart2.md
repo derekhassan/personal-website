@@ -1,5 +1,7 @@
 ---
-tags: post
+tags:
+    - azure
+    - terraform
 title: Deploy an Express Web Server to Azure VM Part 2
 description: Learn how to provision infrastructure for an Express web server in Azure using the infrastructure as code tool Terraform
 author: Derek Hassan
@@ -15,7 +17,7 @@ As part of this blog series, we will be walking through how to set up an Express
 
 1. [Creating a basic “Hello World” Express Server](/blog/deploy-an-express-web-server-to-azure-vm-part-1/)
 2. Write our infrastructure as code utilizing Terraform (this post)
-3. Creating a GitHub Action to automate deploying code changes to our virtual machine
+3. [Creating a GitHub Action to automate deploying code changes to our virtual machine](/blog/deploy-an-express-web-server-to-azure-vm-part-3/)
 
 ## Tools Required
 
@@ -41,8 +43,8 @@ Within the root of our project, let’s create a new directory called `infrastru
 
 Now you structure should look like this:
 
-```
-infrastructure/
+```txt
+📂infrastructure/
 ├── main.tf
 ├── outputs.tf
 ├── providers.tf
@@ -75,7 +77,7 @@ Here we are telling Terraform that the provider `azurerm` is a required provider
 
 We also want to add one more provider that will be used for our SSH keys, and that is the [tls](https://registry.terraform.io/providers/hashicorp/tls/latest/docs) provider. Similar to what we did with the Azure provider, we can add the following block within the `required_providers` block:
 
-```
+```tf
 tls = {
   source  = "hashicorp/tls"
   version = "~>4.0"
@@ -165,7 +167,13 @@ variable "vm_source_image_sku" {
 }
 ```
 
-Now we want to actually set values for our variables. We can do this through the use of a `.tfvars` file. If you're like me and are used to the Node world, this is similar to a `.env` file (_this file should be ignored from source control!_). Inside our `terraform.tfvars` file, go ahead and set values for the following variables:
+Now we want to actually set values for our variables. We can do this through the use of a `.tfvars` file. If you're like me and are used to the Node world, this is similar to a `.env` file.
+
+{% aside "warning" %}
+The <code>terraform.tfvars</code> file should be ignored from source control!
+{% endaside %}
+
+Inside our `terraform.tfvars` file, go ahead and set values for the following variables:
 
 ```tf
 location    = "eastus"

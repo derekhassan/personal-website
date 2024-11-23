@@ -5,7 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Open Graph -->
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://derekhassan.dev{{ page.url }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:description" content="{{ description or metadata.description }}">
+        <meta property="og:image" content="">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="derekhassan.dev">
+        <meta property="twitter:url" content="https://derekhassan.dev{{ page.url }}">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description or metadata.description }}">
+        <meta name="twitter:image" content="">
 
         <title>{{ title }}</title>
         <meta
@@ -28,6 +41,7 @@
         <!-- Used for code block syntax highlighting -->
         <link href="/prism-dracula.css" rel="stylesheet" />
 
+        {% if env.GOOGLE_ANALYTICS_TAG %}
         <!-- Google tag (gtag.js) -->
         <script
             async
@@ -44,6 +58,7 @@
 
             gtag('config', '{{ env.GOOGLE_ANALYTICS_TAG }}');
         </script>
+        {% endif %}
     </head>
     <body>
         <div class="container">
@@ -55,12 +70,24 @@
                 <span class="content__date">
                     Published on {{ date.toDateString() }}
                 </span>
+                <!-- {% if updatedOn %}
+                <span class="content__date">
+                    Last Updated on {{ updatedOn.toDateString() }}
+                </span>
+                {% endif %} -->
+                <ul class="badge-list">
+                {%- for tag in tags | filterTags -%}
+                    <li class="badge">{{ tag }}</li>
+                {%- endfor -%}
+                </ul>
                 <h1 class="content__header">{{ title }}</h1>
-                {{ content | safe }}
+                <div class="blog-content">
+                    {{ content | safe }}
+                </div>
+
                 {% set previousPost = collections.post |
                 getPreviousCollectionItem(page) %} {% set nextPost =
                 collections.post | getNextCollectionItem(page) %}
-
                 <div class="post-pagination">
                     <div class="prev">
                         {% if previousPost %}<a href="{{ previousPost.url }}"

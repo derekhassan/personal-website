@@ -14,8 +14,8 @@ layout: 'base.njk'
             <a href="{{ post.url }}">
                 <h2 class="blog-entry__title">{{ post.data.title }}</h2>
             </a>
-            {%- if post.data.page.excerpt -%}
-            <p>{{ post.data.page.excerpt }}</p>
+            {%- if post.data.excerpt -%}
+            <p>{{ post.data.excerpt }}</p>
             {%- endif -%}
         </article>
     </li>

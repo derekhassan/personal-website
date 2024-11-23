@@ -1,5 +1,6 @@
 ---
-tags: post
+tags:
+    - javascript
 title: innerText vs textContent, What's the Difference?
 description: Dive into the difference between the two similar methods innerText and textContent
 author: Derek Hassan

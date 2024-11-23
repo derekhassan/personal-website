@@ -1,10 +1,12 @@
 ---
-tags: post
+tags:
+    - javascript
 title: How to Pass an Array as a Query String to Express
 description: Learn how to pass an array as part of query params
 author: Derek Hassan
 permalink: 'blog/{{ title | slugify }}/'
 date: 2022-09-10
+updatedOn: 2024-11-23
 ---
 
 I ran into a problem the other day where I wanted to send an array of data to a GET endpoint. I could send this data through the request body, but generally speaking, this is not a best practice. Ideally, I'd like to send this as a query param since I was using this for filtering. I searched around and stumbled on [this stack overflow post](https://stackoverflow.com/questions/3061273/send-an-array-with-an-http-get). To send an array, you can specify a query string with an empty array `?foo[]=value1`. You can then chain this same query string for each subsequent element: `?foo[]=value1&foo[]=value2`.
@@ -72,7 +74,7 @@ I want to filter by the following varieties:
 
 To pass an array, I would send the following `GET` request to my server:
 
-```
+```txt
 http://localhost:3000/apples?filterBy[]=Empire&filterBy[]=Gala&filterBy[]=Granny%20Smith&filterBy[]=Fuji
 ```
 

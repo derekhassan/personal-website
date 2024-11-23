@@ -62,6 +62,21 @@ module.exports = (eleventyConfig) => {
         excerpt_separator: '--excerpt--',
     });
 
+    eleventyConfig.addPairedShortcode('aside', (content, variant = 'info') => {
+        const icons = {
+            info: `<i class="ri-information-line ri-xl"></i>`,
+            warning: `<i class="ri-alert-line ri-xl"></i>`,
+        };
+
+        return `<aside role="note" class="${variant}"><div class="icon">${icons[variant]}</div><span>${markdownLib.render(content)}</span></aside>`;
+    });
+
+    eleventyConfig.addFilter('filterTags', (tags) => {
+        return (tags || []).filter(
+            (tag) => ['all', 'post'].indexOf(tag) === -1
+        );
+    });
+
     return {
         dir: {
             input: 'src',

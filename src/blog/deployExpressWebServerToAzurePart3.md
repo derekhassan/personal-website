@@ -1,5 +1,7 @@
 ---
-tags: post
+tags:
+    - azure
+    - terraform
 title: Deploy an Express Web Server to Azure VM Part 3
 description: Learn how to automate deployments of an Express web server to Azure with GitHub Actions
 author: Derek Hassan
@@ -13,8 +15,8 @@ As part of this blog series, we will be walking through how to set up an Express
 
 ## What We Will Be Doing
 
-1. Creating a basic “Hello World” Express Server
-2. Write our infrastructure as code utilizing Terraform
+1. [Creating a basic “Hello World” Express Server](/blog/deploy-an-express-web-server-to-azure-vm-part-1/)
+2. [Write our infrastructure as code utilizing Terraform](/blog/deploy-an-express-web-server-to-azure-vm-part-2/)
 3. Creating a GitHub Action to automate deploying code changes to our virtual machine (this post)
 
 ## Tools Required

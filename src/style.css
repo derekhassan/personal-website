@@ -1,7 +1,8 @@
 :root {
     --dark: #292c35;
-    --light: #ffffff;
+    --light: rgb(231, 230, 230);
     --gray: #4f4f5d;
+    --border: #51515d;
     --text-xl: 3.75rem;
     --text-l: 2.625rem;
     --text-m: 1.125rem;
@@ -45,6 +46,16 @@ a {
     color: var(--accent);
 }
 
+.blog-content a {
+    color: var(--light);
+    text-decoration: none;
+    box-shadow: 0 1.75px 0 var(--accent);
+    transition: box-shadow 0.15s;
+}
+.blog-content a:hover {
+    box-shadow: 0 0 0 transparent;
+}
+
 .container {
     max-width: 1000px;
     margin-inline: auto;
@@ -56,8 +67,11 @@ a {
 }
 
 .content__date {
+    display: block;
+    max-width: max-content;
     font-size: var(--text-xs);
     font-style: italic;
+    margin-bottom: 0.75em;
 }
 
 .content__header {
@@ -67,7 +81,7 @@ a {
 .content p,
 .content ul,
 .content ol {
-    line-height: 2;
+    line-height: 1.8;
 }
 
 .content blockquote {
@@ -95,11 +109,18 @@ a {
 .content img {
     height: auto;
     max-width: 100%;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .back-link {
+    color: var(--light);
+    text-decoration: none;
     display: block;
     margin-bottom: 2rem;
+    width: max-content;
+    padding: 0.25em;
 }
 
 .post-pagination {
@@ -201,7 +222,9 @@ a {
 
 .hero__small-text,
 .hero__main-title {
-    animation: fade-in 1.25s ease-in, drop-in 0.75s;
+    animation:
+        fade-in 1.25s ease-in,
+        drop-in 0.75s;
 }
 
 .hero__small-text {
@@ -236,13 +259,16 @@ a {
     padding: 0;
 }
 
+.blog-entry {
+    margin-bottom: 3em;
+}
+
 .blog-entry__date {
     font-size: var(--text-xs);
 }
 
 .blog-entry__title {
-    margin-top: 0;
-    margin-bottom: 3rem;
+    margin-block: 0;
 }
 
 .page-heading {
@@ -326,4 +352,70 @@ a {
 /* Utils */
 .link {
     color: var(--accent);
+}
+
+/* Components */
+
+aside {
+    border-radius: 2px;
+    padding: 1em;
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin-block: 1em;
+}
+
+aside p {
+    margin: 0;
+}
+
+aside .icon {
+    height: 24px;
+    width: 24px;
+}
+
+aside .icon i {
+    line-height: 1.5;
+}
+
+aside.info {
+    border-left: 2px solid rgb(36, 104, 199);
+    background-color: rgb(39, 50, 65);
+}
+
+aside.info i {
+    color: rgb(36, 104, 199);
+}
+
+aside.warning {
+    border-left: 2px solid rgb(255, 152, 34);
+    background-color: rgb(72, 44, 12);
+}
+
+aside.warning i {
+    color: rgb(255, 152, 34);
+}
+
+pre {
+    border: 1px solid var(--border);
+}
+
+.badge-list {
+    list-style-type: none;
+    display: flex;
+    gap: 0.75em;
+    padding: 0;
+}
+
+.badge {
+    line-height: normal;
+    padding: 0.25em 0.5em;
+    background-color: #414351;
+    border-radius: 8px;
+}
+
+.blog-content > code {
+    background-color: #404456;
+    border-radius: 4px;
+    padding: 0.125em 0.25em;
 }

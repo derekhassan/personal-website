@@ -1,5 +1,7 @@
 ---
-tags: post
+tags:
+    - azure
+    - terraform
 title: Deploy an Express Web Server to Azure VM Part 1
 description: Learn how to quickly set up a basic Express web server
 author: Derek Hassan
@@ -15,7 +17,7 @@ As part of this blog series, we will be walking through how to set up an Express
 
 1. Creating a basic "Hello World" Express Server (this post)
 2. [Write our infrastructure as code utilizing Terraform](/blog/deploy-an-express-web-server-to-azure-vm-part-2/)
-3. Creating a GitHub Action to automate deploying code changes to our virtual machine
+3. [Creating a GitHub Action to automate deploying code changes to our virtual machine](/blog/deploy-an-express-web-server-to-azure-vm-part-3/)
 
 ## Tools Required
 
@@ -55,12 +57,12 @@ Finally, I’ll create a new directory under `src` for all my EJS templates call
 
 After the previous steps, your file structure should look like the following:
 
-```
-src/
-├── public/
-│   └── css/
+```txt
+📂src/
+├── 📂public/
+│   └── 📂css/
 │       └── style.css
-├── views/
+├── 📂views/
 │   └── index.ejs
 └── index.js
 ```
@@ -149,7 +151,7 @@ The `dev` script uses nodemon to run our file `src/index.js` and it will also re
 Now let’s work on creating our view. Open up the `index.ejs` file and add the following code:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
